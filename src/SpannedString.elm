@@ -20,6 +20,8 @@ type alias SpannedString =
 
     span "Hello world!" [ 0, 1, 2, 3, 4 ] == [ ( "Hello", True ), ( " world!", False ) ]
 
+    span "47 Rue Falguière, Paris" [ 8, 9, 10 ] == [ ( "47 Rue ", False ), ( "Fal", True ), ( "guière, Paris", False ) ]
+
 -}
 span : String -> List Int -> SpannedString
 span string indices =
