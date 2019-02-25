@@ -18,6 +18,7 @@ Here is an example.
 
 ```elm
 import SpannedString exposing (span)
+import Html exposing (Html)
 
 format : String -> List Int -> List (Html msg)
 format string indices =
@@ -25,9 +26,9 @@ format string indices =
         |> List.map
             (\( string, isSpanned ) ->
                 if isSpanned then
-                    strong [] [ text string ]
+                    Html.strong [] [ Html.text string ]
 
                 else
-                    text string
+                    Html.text string
             )
 ```
